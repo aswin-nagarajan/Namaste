@@ -19,11 +19,17 @@
 
     <!--Font Themes-->
     <style name="Text">
-        <item name="android:typeface">serif</item>
+
     </style>
     <style name="SubHeadingText" parent="Text">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <!--Naviagation Menu Style-->
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:listPreferredItemHeightSmall">50dp</item>
     </style>
 
 </resources>
