@@ -4,33 +4,33 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_profile"
             android:title="Profile" />
         <item
             android:id="@+id/nav_timeTable"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_timetable"
             android:title="Time Table" />
         <item
             android:id="@+id/nav_attendance"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_attendance"
             android:title="Attendance" />
         <item
             android:id="@+id/nav_assignments"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_assignment"
             android:title="Assignments" />
         <item
             android:id="@+id/nav_gradeSheet"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_grade_sheet"
             android:title="Grade Sheet" />
         <item
             android:id="@+id/nav_groupChat"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_group_chat"
             android:title="Group Chat" />
     </group>
 
     <item
         android:id="@+id/nav_logout"
-        android:icon="@drawable/ic_menu_share"
+        android:icon="@drawable/ic_logout"
         android:title="Log Out" />
 
 </menu>
