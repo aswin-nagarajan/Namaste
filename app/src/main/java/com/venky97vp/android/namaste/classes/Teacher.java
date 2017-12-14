@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Teacher {
+    public String uid;
     public String id;
     public String name;
     public ArrayList<Section> sections;

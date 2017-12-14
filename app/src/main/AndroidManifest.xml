@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver
@@ -40,7 +39,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NotificationActivity" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
