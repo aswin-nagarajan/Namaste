@@ -21,14 +21,6 @@ import com.venky97vp.android.namaste.classes.timetable.TTHour;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link TimetableFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link TimetableFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TimetableFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
@@ -44,7 +36,7 @@ public class TimetableFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
         List<TTDay> days = getDays();
