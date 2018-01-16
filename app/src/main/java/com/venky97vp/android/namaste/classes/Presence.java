@@ -10,5 +10,4 @@ public class Presence {
     boolean isPresent;
     Date date;
     int hour;
-    Subject subject;
 }
