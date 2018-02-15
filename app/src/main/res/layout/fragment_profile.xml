@@ -1,4 +1,5 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,12 +7,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            android:id="@+id/imageView3" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -19,8 +22,210 @@
             android:layout_marginTop="69dp"
             android:scaleType="fitXY"
             android:elevation="8dp"
-            android:src="@drawable/ic_tiangle" />
+            android:src="@drawable/ic_tiangle"
+            android:id="@+id/imageView4" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="120dp"
+            android:layout_alignBottom="@+id/imageView3"
+            android:elevation="8dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView3"
+            android:elevation="8dp"
+            android:fontFamily="@font/renogareregular"
+            android:text="V.Sudha"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv1"
+            android:elevation="8dp"
+            android:fontFamily="@font/renogareregular"
+            android:text="40045"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@+id/tv2"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="8dp"
+            android:src="@drawable/usericon"
+            android:id="@+id/imageView5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/imageView5">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="42dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/gothic"
+                android:text="Date of Birth"
+                android:textAlignment="center"
+                android:textColor="#8b8a8a"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_below="@+id/textView3"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/gothic"
+                android:text="15 - September - 1956"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/gothic"
+                android:text="School"
+                android:textAlignment="center"
+                android:textColor="#8b8a8a" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textView9"
+                android:layout_alignRight="@+id/textView9"
+                android:layout_below="@+id/textView9"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothic"
+                android:textStyle="bold"
+                android:text="D.A.V Senior Secondary School"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView10"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/gothic"
+                android:text="Contact"
+                android:textAlignment="center"
+                android:textColor="#8b8a8a" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textView13"
+                android:layout_alignRight="@+id/textView13"
+                android:layout_below="@+id/textView13"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothic"
+                android:textStyle="bold"
+                android:text="9876543210"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView14"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/gothic"
+                android:text="Classes Handled"
+                android:textAlignment="center"
+                android:textColor="#8b8a8a" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textView13"
+                android:layout_alignRight="@+id/textView13"
+                android:layout_below="@+id/textView15"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothic"
+                android:textStyle="bold"
+                android:text="12-D :- Biology"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textView13"
+                android:layout_alignRight="@+id/textView13"
+                android:layout_below="@+id/textView16"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothic"
+                android:textStyle="bold"
+                android:text="11-A :- Biology"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textView13"
+                android:layout_alignRight="@+id/textView13"
+                android:layout_below="@+id/textView17"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothic"
+                android:textStyle="bold"
+                android:text="10-C :- EVS"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
-</FrameLayout>
+
+</RelativeLayout>
