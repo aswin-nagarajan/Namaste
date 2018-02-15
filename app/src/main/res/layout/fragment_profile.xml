@@ -30,10 +30,10 @@
             android:layout_height="120dp"
             android:layout_alignBottom="@+id/imageView3"
             android:elevation="8dp"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
             android:id="@+id/imageView2"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_profile" />
+            android:src="@drawable/femalefigure" />
 
         <TextView
             android:id="@+id/tv1"
