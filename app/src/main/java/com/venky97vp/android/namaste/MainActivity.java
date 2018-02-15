@@ -28,6 +28,7 @@ import com.venky97vp.android.namaste.classes.Student;
 import com.venky97vp.android.namaste.core.modview.PanNavDrawer;
 import com.venky97vp.android.namaste.fragments.AssignmentFragment;
 import com.venky97vp.android.namaste.fragments.AttendanceFragment;
+import com.venky97vp.android.namaste.fragments.ForumFragment;
 import com.venky97vp.android.namaste.fragments.GradeSheetFragment;
 import com.venky97vp.android.namaste.fragments.GroupChatFragment;
 import com.venky97vp.android.namaste.fragments.ProfileFragment;
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements
         Student student = new Student(firebaseUser.getUid(), "Venkie");
 //        student.uid = firebaseUser.getUid();
 //        student.name = "Venkatesh Prasad";
+
+        displaySelectedScreen(R.id.nav_groupChat);
 
         mDatabase.child("users")
                 .child("students")
@@ -151,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements
                 fragment = new TimetableFragment();
                 break;
             case R.id.nav_groupChat:
-                fragment = new GroupChatFragment();
+                fragment = new ForumFragment();
                 break;
         }
 

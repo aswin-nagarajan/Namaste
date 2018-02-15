@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.venky97vp.android.namaste.R;
@@ -20,7 +21,7 @@ public class AttendanceEntryViewHolder extends RecyclerView.ViewHolder{
     public RadioButton isAbsent;
     public TextView name;
     String id;
-    LinearLayout ll;
+    RelativeLayout ll;
     Context ctx;
     RadioGroup rg;
     public AttendanceEntryViewHolder(View itemView, Context ctx) {
@@ -28,7 +29,7 @@ public class AttendanceEntryViewHolder extends RecyclerView.ViewHolder{
         isPresent = (RadioButton) itemView.findViewById(R.id.Pres);
         isAbsent = (RadioButton) itemView.findViewById(R.id.Abs);
         name = (TextView) itemView.findViewById(R.id.name);
-        ll = (LinearLayout) itemView.findViewById(R.id.layout);
+        ll = (RelativeLayout) itemView.findViewById(R.id.layout);
         rg=(RadioGroup) itemView.findViewById(R.id.radiogroup);
         this.ctx = ctx;
     }

@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private PanEditText mNumberView;
     private View mLoginFormView;
-    private com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     ProgressDialog progressDialog;
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
