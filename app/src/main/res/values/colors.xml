@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#DF3F44</color>
-    <color name="colorPrimaryDark">#DF3F44</color>
+    <color name="colorPrimary">#2B57C0</color>
+    <color name="colorPrimaryDark">#2B57C0</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimaryLight">#FFCDD2</color>
     <color name="colorTextPrimary">#212121</color>
@@ -9,4 +9,6 @@
     <color name="colorDivider">#BDBDBD</color>
     <color name="green">#62e82b</color>
     <color name="red">#e82a20</color>
+    <color name="cardBackground">#EFEFEF</color>
+    <color name="divider">#BCBCBC</color>
 </resources>
