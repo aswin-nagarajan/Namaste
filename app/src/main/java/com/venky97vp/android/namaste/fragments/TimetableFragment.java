@@ -1,34 +1,66 @@
 package com.venky97vp.android.namaste.fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.thoughtbot.expandablerecyclerview.listeners.GroupExpandCollapseListener;
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.venky97vp.android.namaste.R;
-import com.venky97vp.android.namaste.adapters.DaysAdapter;
-import com.venky97vp.android.namaste.classes.timetable.TTDay;
-import com.venky97vp.android.namaste.classes.timetable.TTHour;
+import com.venky97vp.android.namaste.adapters.ScheduleTabAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
+import java.util.Date;
+
+import static android.content.ContentValues.TAG;
 
 public class TimetableFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private DaysAdapter adapter;
+    private TabLayout tabs;
 
     public TimetableFragment() {
         // Required empty public constructor
     }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ScheduleTabAdapter adapter = new ScheduleTabAdapter(getChildFragmentManager());
+        Fragment day1 = new DayFragment();
+        adapter.addFragment(day1, "Monday");
+        Fragment day2 = new DayFragment();
+        adapter.addFragment(day2, "Tuesday");
+        Fragment day3 = new DayFragment();
+        adapter.addFragment(day3, "Wednesday");
+        Fragment day4 = new DayFragment();
+        adapter.addFragment(day4, "Thursday");
+        Fragment day5 = new DayFragment();
+        adapter.addFragment(day5, "Friday");
+        viewPager.setAdapter(adapter);
+    }
+
+    private void changeTabsFont() {
+        ViewGroup vg = (ViewGroup) tabs.getChildAt(0);
+        int tabsCount = vg.getChildCount();
+        for (int j = 0; j < tabsCount; j++) {
+            ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
+            int tabChildsCount = vgTab.getChildCount();
+            for (int i = 0; i < tabChildsCount; i++) {
+                View tabViewChild = vgTab.getChildAt(i);
+                if (tabViewChild instanceof TextView) {
+                    ((TextView) tabViewChild).setTypeface(Typeface.createFromAsset(getContext().getAssets(), "font/JosefinSans-Regular.ttf"));
+                }
+            }
+        }
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,34 +71,25 @@ public class TimetableFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
-        List<TTDay> days = getDays();
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        adapter = new DaysAdapter(getContext(), days);
-
-
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+        tabs = (TabLayout) view.findViewById(R.id.result_tabs);
+        tabs.setupWithViewPager(viewPager);
+        changeTabsFont();
+        int week = getDayOfWeek(new Date(System.currentTimeMillis())) - 2;
+        TabLayout.Tab tab = tabs.getTabAt(week);
+        Log.d(TAG, "onCreateView: " + week);
+        if (tab != null) {
+            Log.d(TAG, "onCreateView: " + week);
+            tab.select();
+        }
         return view;
     }
 
-    private List<TTDay> getDays() {
-        List<TTDay> list = new ArrayList<>();
-        List<TTHour> hlist = new ArrayList<>();
-        hlist.add(new TTHour("Math"));
-        hlist.add(new TTHour("Science"));
-        hlist.add(new TTHour("Social"));
-        hlist.add(new TTHour("Lunch"));
-        hlist.add(new TTHour("English"));
-        hlist.add(new TTHour("P.E.T"));
-        hlist.add(new TTHour("Language"));
-        list.add(new TTDay("Monday", hlist));
-        list.add(new TTDay("Tuesday", hlist));
-        list.add(new TTDay("Wednesday", hlist));
-        list.add(new TTDay("Thursday", hlist));
-        list.add(new TTDay("Friday", hlist));
-        list.add(new TTDay("Saturday", hlist));
-        return list;
+    public int getDayOfWeek(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        return c.get(Calendar.DAY_OF_WEEK);
     }
 
     public void onButtonPressed(Uri uri) {

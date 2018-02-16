@@ -2,12 +2,9 @@ package com.venky97vp.android.namaste.fragments;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.net.ParseException;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,14 +16,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.jaredrummler.materialspinner.MaterialSpinner;
-import com.venky97vp.android.namaste.MainActivity;
 import com.venky97vp.android.namaste.R;
 import com.venky97vp.android.namaste.adapters.AttendanceAdapter;
-import com.venky97vp.android.namaste.adapters.DaysAdapter;
 import com.venky97vp.android.namaste.classes.Presence;
 import com.venky97vp.android.namaste.classes.Section;
-import com.venky97vp.android.namaste.classes.timetable.TTDay;
-import com.venky97vp.android.namaste.classes.timetable.TTHour;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
