@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.venky97vp.android.namaste.R;
@@ -32,6 +33,7 @@ public class AttendanceFragment extends Fragment implements Button.OnClickListen
 
     private Section ClassSelected;
     private EditText txtDate;
+    private TextView name;
     private OnFragmentInteractionListener mListener;
     private int mYear, mMonth, mDay;
     private AttendanceAdapter adapter;
@@ -56,10 +58,12 @@ public class AttendanceFragment extends Fragment implements Button.OnClickListen
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
+        name = (TextView) view.findViewById(R.id.textView2);
+        name.setText("Sasikala DK");
         MaterialSpinner spinner = (MaterialSpinner)view.findViewById(R.id.spinner);
         ImageButton open_cal = (ImageButton) view.findViewById(R.id.cal_button);
         open_cal.setOnClickListener(this);
-        spinner.setItems("11-A Biology", "12-B Physics");
+        spinner.setItems("11-A Biology", "12-B Physics", "12-C Chemistry", "11-B Maths");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
@@ -92,6 +96,24 @@ public class AttendanceFragment extends Fragment implements Button.OnClickListen
         hlist.add(new Presence(false, false, "4", "Venkatesh"));
         hlist.add(new Presence(false, false, "5", "Jithendran"));
         hlist.add(new Presence(false, false, "6", "TestName"));
+        hlist.add(new Presence(false, false, "7", "Aswin"));
+        hlist.add(new Presence(false, false, "8", "Dhilip"));
+        hlist.add(new Presence(false, false, "9", "Eniyavan"));
+        hlist.add(new Presence(false, false, "10", "Venkatesh"));
+        hlist.add(new Presence(false, false, "11", "Jithendran"));
+        hlist.add(new Presence(false, false, "12", "TestName"));
+        hlist.add(new Presence(false, false, "14", "Aswin"));
+        hlist.add(new Presence(false, false, "15", "Dhilip"));
+        hlist.add(new Presence(false, false, "16", "Eniyavan"));
+        hlist.add(new Presence(false, false, "17", "Venkatesh"));
+        hlist.add(new Presence(false, false, "18", "Jithendran"));
+        hlist.add(new Presence(false, false, "19", "TestName"));
+        hlist.add(new Presence(false, false, "20", "Aswin"));
+        hlist.add(new Presence(false, false, "21", "Dhilip"));
+        hlist.add(new Presence(false, false, "22", "Eniyavan"));
+        hlist.add(new Presence(false, false, "23", "Venkatesh"));
+        hlist.add(new Presence(false, false, "24", "Jithendran"));
+        hlist.add(new Presence(false, false, "25", "TestName"));
         return hlist;
     }
 
