@@ -5,6 +5,11 @@ package com.venky97vp.android.namaste.classes;
  */
 
 public class Section { // TODO: Implement class interface
-    public String id; //4a
+    public int id; //4a
     public int noOfStudents;
+
+    public Section(int id, int no){
+        this.id=id;
+        this.noOfStudents=no;
+    }
 }
