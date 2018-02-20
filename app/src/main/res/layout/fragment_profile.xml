@@ -12,24 +12,22 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:background="@color/colorPrimary"
             android:id="@+id/imageView3" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="69dp"
+            android:layout_marginTop="99dp"
             android:scaleType="fitXY"
-            android:elevation="8dp"
-            android:src="@drawable/ic_tiangle"
+            app:srcCompat="@drawable/ic_tiangle"
             android:id="@+id/imageView4" />
 
         <ImageView
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="120dp"
             android:layout_alignBottom="@+id/imageView3"
-            android:elevation="8dp"
             android:scaleType="centerInside"
             android:id="@+id/imageView2"
             android:layout_centerHorizontal="true"
@@ -42,7 +40,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView3"
-            android:elevation="8dp"
             android:fontFamily="@font/renogareregular"
             android:text="V.Sudha"
             android:textAlignment="center"
@@ -58,7 +55,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tv1"
-            android:elevation="8dp"
             android:fontFamily="@font/renogareregular"
             android:text="40045"
             android:textAlignment="center"
@@ -72,7 +68,6 @@
             android:layout_below="@+id/tv2"
             android:layout_marginTop="1dp"
             android:layout_centerHorizontal="true"
-            android:elevation="8dp"
             android:src="@drawable/usericon"
             android:id="@+id/imageView5" />
 
@@ -91,7 +86,6 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="42dp"
-                android:elevation="8dp"
                 android:fontFamily="@font/gothic"
                 android:text="Date of Birth"
                 android:textAlignment="center"
