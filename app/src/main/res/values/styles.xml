@@ -41,6 +41,11 @@
         <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
     </style>
 
+    <style name="MyCustomPagerTitleStrip">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
     </style>

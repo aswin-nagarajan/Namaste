@@ -10,21 +10,31 @@ public class Presence {
     private boolean isPresent;
     private boolean isAbsent;
     private String id;
-    private String name;
+    private String Name;
+
+    public Presence(Student st) {
+        id = st.uid;
+        Name = st.Name;
+        isPresent = false;
+        isPresent = true;
+
+    }
+
+    public Presence(){}
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public Presence(boolean isP, boolean isA, String id, String name){
         this.isPresent=isP;
         this.isAbsent=isA;
         this.id=id;
-        this.name = name;
+        this.Name = name;
     }
     public boolean isAbsent() {
         return isAbsent;

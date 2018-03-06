@@ -6,7 +6,7 @@ package com.venky97vp.android.namaste.classes;
 
 public class Student {
     public String uid;
-    public String name;
+    public String Name;
     public long registerNumber;
     public String address;
     public double grade;
@@ -17,6 +17,8 @@ public class Student {
 
     public Student(String uid, String name) {
         this.uid = uid;
-        this.name = name;
+        this.Name = name;
     }
+
+    public Student(){}
 }

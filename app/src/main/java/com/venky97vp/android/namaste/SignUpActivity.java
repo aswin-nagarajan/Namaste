@@ -70,7 +70,7 @@ public class SignUpActivity extends AppCompatActivity implements StickySwitch.On
         } else {
             Student student = new Student(firebaseUser.getUid(), name);
             student.uid = firebaseUser.getUid();
-            student.name = name;
+            student.Name = name;
             mDatabase.child("users")
                     .child("students")
                     .child(firebaseUser.getUid())

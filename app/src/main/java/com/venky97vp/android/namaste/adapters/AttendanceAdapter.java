@@ -7,9 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
 import com.venky97vp.android.namaste.R;
 import com.venky97vp.android.namaste.classes.Presence;
+import com.venky97vp.android.namaste.classes.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -17,13 +21,23 @@ import java.util.zip.Inflater;
  * Created by Aswin Nagarajan on 05-02-2018.
  */
 
-public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceEntryViewHolder>{
+public class AttendanceAdapter extends FirebaseRecyclerAdapter<Student, AttendanceEntryViewHolder> {
 
     Context context;
     List<Presence> attendanceList;
-    public AttendanceAdapter(Context ctx, List<Presence> list) {
-        this.context= ctx;
-        this.attendanceList = list;
+
+    public AttendanceAdapter(Class<Student> modelClass, int modelLayout, Class<AttendanceEntryViewHolder> viewHolderClass, DatabaseReference ref, Context context) {
+        super(modelClass, modelLayout, viewHolderClass, ref);
+        this.context= context;
+    }
+
+    public List<Presence> getItemList(){
+        List<Presence> list = new ArrayList<Presence>();
+        for (int pos=0; pos< this.getItemCount();pos++){
+            list.add(new Presence(getItem(pos)));
+        }
+
+        return list;
     }
 
     @Override
@@ -34,8 +48,9 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceEntryViewH
     }
 
     @Override
-    public void onBindViewHolder(final AttendanceEntryViewHolder holder, int position) {
-        Presence p = attendanceList.get(position);
+    protected void populateViewHolder(AttendanceEntryViewHolder vholder, Student model, int position){
+        final AttendanceEntryViewHolder holder = vholder;
+        Presence p = new Presence(model);
         holder.isAbsent.setChecked(p.isAbsent());
         holder.isPresent.setChecked(p.isPresent());
         holder.name.setText(p.getName());
@@ -64,8 +79,4 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceEntryViewH
 
     }
 
-    @Override
-    public int getItemCount() {
-        return attendanceList.size();
-    }
 }
